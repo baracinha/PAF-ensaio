@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf.WellKnownTypes;
 using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.X9;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,11 +53,82 @@ namespace PAF_ensaio
             }
         }
 
-
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void updateUser(string field, string elemento, int condicao,string id)
         {
+            while (condicao == 1)
+            {
+                string sql = $"UPDATE utilizadores SET {field} = @elemento WHERE id = @id";
+                MySqlParameter[] p = { new MySqlParameter("@elemento", elemento), new MySqlParameter("@id", id) };
 
+                int resultado = internalAPI.Executar(sql, p);
+
+                if (resultado > 0)
+                {
+                    MessageBox.Show(field + " atualizado com sucesso!");
+                    condicao = 0;
+                }
+            }
         }
+
+        private void insertUser(string username, string password, string nivel)
+        {
+            try
+            {
+                string sql = "INSERT INTO utilizadores (username, password, nivel) VALUES (@username, @password, @nivel)";
+                MySqlParameter[] p = {
+                    new MySqlParameter("@username", username),
+                    new MySqlParameter("@password", password),
+                    new MySqlParameter("@nivel", nivel)
+                    };
+                int resultado = internalAPI.Executar(sql, p);
+                if (resultado > 0)
+                {
+                    MessageBox.Show("Utilizador inserido com sucesso!");
+                }
+                else 
+                {                     
+                    MessageBox.Show("Falha ao inserir utilizador."); }
+                }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir: " + ex.Message);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            insertUser(textUSER.Text, textPSSRD.Text, comboBox1.SelectedItem.ToString());
+        }
+
+
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(textUSER.Text))
+                {
+                    updateUser("username", textUSER.Text, 1, textID.Text);
+                }
+                else if (!string.IsNullOrWhiteSpace(textPSSRD.Text))
+                {
+                    updateUser("password", textPSSRD.Text, 1, textID.Text);
+                }
+                else if (!(comboBox1.SelectedIndex == -1))
+                {
+                    updateUser("nivel", comboBox1.SelectedItem.ToString(), 1, textID.Text);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao atualizar: " + ex.Message);
+            }
+        }
+
+                private void pictureBox1_Click(object sender, EventArgs e)
+                {
+
+                }
 
         private void gestaousers_Load(object sender, EventArgs e)
         {
