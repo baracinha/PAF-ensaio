@@ -32,15 +32,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.lbl_erro = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(328, 239);
+            this.textBox1.Location = new System.Drawing.Point(148, 245);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(156, 20);
             this.textBox1.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(328, 278);
+            this.textBox2.Location = new System.Drawing.Point(148, 284);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(156, 20);
             this.textBox2.TabIndex = 1;
@@ -57,7 +58,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(325, 223);
+            this.label1.Location = new System.Drawing.Point(145, 229);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(55, 13);
             this.label1.TabIndex = 2;
@@ -66,25 +67,15 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(325, 262);
+            this.label2.Location = new System.Drawing.Point(145, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(53, 13);
             this.label2.TabIndex = 3;
             this.label2.Text = "Password";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::PAF_ensaio.Properties.Resources.logo_atec_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(328, 56);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(156, 147);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(409, 313);
+            this.button1.Location = new System.Drawing.Point(229, 319);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 5;
@@ -96,17 +87,38 @@
             // 
             this.lbl_erro.AutoSize = true;
             this.lbl_erro.ForeColor = System.Drawing.Color.Red;
-            this.lbl_erro.Location = new System.Drawing.Point(325, 339);
+            this.lbl_erro.Location = new System.Drawing.Point(145, 345);
             this.lbl_erro.Name = "lbl_erro";
             this.lbl_erro.Size = new System.Drawing.Size(165, 13);
             this.lbl_erro.TabIndex = 6;
             this.lbl_erro.Text = "As suas credenciais são inválidas";
             // 
+            // button2
+            // 
+            this.button2.Image = global::PAF_ensaio.Properties.Resources.eye_password_hide_svgrepo_com;
+            this.button2.Location = new System.Drawing.Point(310, 284);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(88, 58);
+            this.button2.TabIndex = 7;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::PAF_ensaio.Properties.Resources.logo_atec_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(148, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(156, 147);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(438, 450);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.lbl_erro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox1);
@@ -115,6 +127,7 @@
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -132,6 +145,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lbl_erro;
+        private System.Windows.Forms.Button button2;
     }
 }
 

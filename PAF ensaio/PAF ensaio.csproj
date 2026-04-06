@@ -150,5 +150,8 @@
   <ItemGroup>
     <None Include="Resources\estudar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye-password-hide-svgrepo-com.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

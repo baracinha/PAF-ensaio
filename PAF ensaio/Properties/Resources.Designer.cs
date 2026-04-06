@@ -73,6 +73,16 @@ namespace PAF_ensaio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_password_hide_svgrepo_com {
+            get {
+                object obj = ResourceManager.GetObject("eye-password-hide-svgrepo-com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_atec {
             get {
                 object obj = ResourceManager.GetObject("logo atec", resourceCulture);
