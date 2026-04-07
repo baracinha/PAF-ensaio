@@ -46,7 +46,21 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textID = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnProxima = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.lblEnunciado = new System.Windows.Forms.Label();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBoxDisciplinas = new System.Windows.Forms.ComboBox();
@@ -59,28 +73,14 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_nivel = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.lblEnunciado = new System.Windows.Forms.Label();
-            this.button6 = new System.Windows.Forms.Button();
-            this.btnProxima = new System.Windows.Forms.Button();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ViewUsers)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ViewUsers
@@ -126,6 +126,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(632, 343);
             this.tabControl1.TabIndex = 4;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPage1
             // 
@@ -249,6 +250,64 @@
             this.tabPage2.Text = "Resultados";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(291, 59);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(303, 204);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(56, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 13);
+            this.label13.TabIndex = 5;
+            this.label13.Text = "label13";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(59, 78);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 4;
+            this.label12.Text = "label12";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(102, 134);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(54, 13);
+            this.label11.TabIndex = 3;
+            this.label11.Text = "Incorretas";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(102, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(46, 13);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Corretas";
+            // 
+            // progressBar2
+            // 
+            this.progressBar2.Location = new System.Drawing.Point(105, 150);
+            this.progressBar2.Name = "progressBar2";
+            this.progressBar2.Size = new System.Drawing.Size(100, 23);
+            this.progressBar2.TabIndex = 1;
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(105, 75);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.TabIndex = 0;
+            // 
             // tabPage3
             // 
             this.tabPage3.Controls.Add(this.btnProxima);
@@ -268,6 +327,80 @@
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Questões de estudo";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // btnProxima
+            // 
+            this.btnProxima.Location = new System.Drawing.Point(526, 276);
+            this.btnProxima.Name = "btnProxima";
+            this.btnProxima.Size = new System.Drawing.Size(75, 23);
+            this.btnProxima.TabIndex = 9;
+            this.btnProxima.Text = "proxima";
+            this.btnProxima.UseVisualStyleBackColor = true;
+            this.btnProxima.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(435, 276);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.TabIndex = 8;
+            this.button6.Text = "anterior";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // lblEnunciado
+            // 
+            this.lblEnunciado.AutoSize = true;
+            this.lblEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEnunciado.Location = new System.Drawing.Point(174, 58);
+            this.lblEnunciado.Name = "lblEnunciado";
+            this.lblEnunciado.Size = new System.Drawing.Size(103, 25);
+            this.lblEnunciado.TabIndex = 7;
+            this.lblEnunciado.Text = "enunciado";
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(179, 235);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.TabIndex = 6;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "radioButton4";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(179, 188);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.TabIndex = 5;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(179, 143);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.TabIndex = 4;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(179, 100);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.TabIndex = 3;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "radioButton1";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -373,138 +506,6 @@
             this.lbl_nivel.TabIndex = 12;
             this.lbl_nivel.Text = "nivel";
             // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(179, 100);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(179, 143);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(179, 188);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(179, 235);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 17);
-            this.radioButton4.TabIndex = 6;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // lblEnunciado
-            // 
-            this.lblEnunciado.AutoSize = true;
-            this.lblEnunciado.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEnunciado.Location = new System.Drawing.Point(174, 58);
-            this.lblEnunciado.Name = "lblEnunciado";
-            this.lblEnunciado.Size = new System.Drawing.Size(103, 25);
-            this.lblEnunciado.TabIndex = 7;
-            this.lblEnunciado.Text = "enunciado";
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(435, 276);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "anterior";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // btnProxima
-            // 
-            this.btnProxima.Location = new System.Drawing.Point(526, 276);
-            this.btnProxima.Name = "btnProxima";
-            this.btnProxima.Size = new System.Drawing.Size(75, 23);
-            this.btnProxima.TabIndex = 9;
-            this.btnProxima.Text = "proxima";
-            this.btnProxima.UseVisualStyleBackColor = true;
-            this.btnProxima.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // progressBar1
-            // 
-            this.progressBar1.Location = new System.Drawing.Point(105, 75);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
-            this.progressBar1.TabIndex = 0;
-            // 
-            // progressBar2
-            // 
-            this.progressBar2.Location = new System.Drawing.Point(105, 150);
-            this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(100, 23);
-            this.progressBar2.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(102, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 13);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "Corretas";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(102, 134);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 13);
-            this.label11.TabIndex = 3;
-            this.label11.Text = "Incorretas";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(59, 78);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(41, 13);
-            this.label12.TabIndex = 4;
-            this.label12.Text = "label12";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(56, 155);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 5;
-            this.label13.Text = "label13";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(291, 59);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(303, 204);
-            this.dataGridView1.TabIndex = 6;
-            // 
             // gestaousers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -528,11 +529,11 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

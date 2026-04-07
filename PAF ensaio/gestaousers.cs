@@ -17,13 +17,16 @@ namespace PAF_ensaio
 {
     public partial class gestaousers : Form
     {
+        int perguntaAtual = 0; // Índice da pergunta que está a aparecer
+        int certas = 0;
+        int erradas = 0;
         public gestaousers()
         {
             InitializeComponent();
         }
 
         DataTable dtPerguntas; // Guarda as perguntas da disciplina selecionada
-        int perguntaAtual = 0; // Índice da pergunta que está a aparecer
+        
 
         private void listGrelha()
         {
@@ -100,7 +103,22 @@ namespace PAF_ensaio
 
         private void button2_Click(object sender, EventArgs e)
         {
-            insertUser(textUSER.Text, textPSSRD.Text, comboBox1.SelectedItem.ToString());
+            try
+            {
+                if (string.IsNullOrEmpty(textUSER.Text)&&
+                    string.IsNullOrEmpty(textPSSRD.Text))
+                {
+                    MessageBox.Show("insere um username e uma password");
+                }
+                else
+                {
+                    insertUser(textUSER.Text, textPSSRD.Text, comboBox1.SelectedItem.ToString());
+                }           
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao inserir: " + ex.Message);
+            }
         }
 
 
@@ -185,27 +203,63 @@ namespace PAF_ensaio
 
         private void button7_Click(object sender, EventArgs e)
         {
-            if(dtPerguntas == null || dtPerguntas.Rows.Count == 0)
-    {
-                MessageBox.Show("Primeiro tens de clicar em Iniciar!");
-                return;
-            }
+            if (dtPerguntas == null) return;
 
-            // 2. Verificar se ainda NÃO chegámos à última pergunta
-            // Se o índice for menor que (Total de Linhas - 1)
+            // 1. CAPTURAR A RESPOSTA (Antes de qualquer outra coisa!)
+            // Vamos criar uma variável para saber se o utilizador acertou NESTA pergunta
+            bool acertouNesta = false;
+
+            if (radioButton1.Checked && Convert.ToInt32(radioButton1.Tag) == 1) acertouNesta = true;
+            else if (radioButton2.Checked && Convert.ToInt32(radioButton2.Tag) == 1) acertouNesta = true;
+            else if (radioButton3.Checked && Convert.ToInt32(radioButton3.Tag) == 1) acertouNesta = true;
+            else if (radioButton4.Checked && Convert.ToInt32(radioButton4.Tag) == 1) acertouNesta = true;
+
+            // 2. ATUALIZAR OS CONTADORES GLOBAIS
+            if (acertouNesta) certas++;
+            else erradas++;
+
+            // 3. NAVEGAÇÃO
             if (perguntaAtual < dtPerguntas.Rows.Count - 1)
             {
-                perguntaAtual++; // Avança
+                perguntaAtual++;
                 MostrarPergunta(perguntaAtual);
             }
             else
             {
-                // Se já não há mais perguntas
-                MessageBox.Show("Chegaste ao fim do questionário!");
+                // 4. FINALIZAR
+                GravarResultadoNoBanco();
+                MessageBox.Show("Fim do Teste!\nAcertos: " + certas + "\nErros: " + erradas);
 
-                // Aqui podes chamar a função para calcular a nota final
-                // CalcularPontuacao(); 
+                // Limpar para o próximo teste
+                certas = 0;
+                erradas = 0;
+                perguntaAtual = 0;
             }
+        }
+
+        private void GravarResultadoNoBanco()
+        {
+            int idDisc = comboBoxDisciplinas.SelectedIndex + 1;
+
+            // Validação extra para segurança
+            if (idDisc < 1 || idDisc > 3)
+            {
+                MessageBox.Show("Erro: Disciplina inválida.");
+                return;
+            }
+
+            string sqlTeste = @"INSERT INTO testes (id_utilizador, id_disciplina, data_teste, total_perguntas, total_corretas, total_erradas) 
+                    VALUES (@uid, @did, NOW(), @total, @c, @e)";
+
+            MySqlParameter[] p = {
+    new MySqlParameter("@uid", session.user.id), // ATENÇÃO: Confirma se esta variável não é 0!
+    new MySqlParameter("@did", idDisc),
+    new MySqlParameter("@total", dtPerguntas.Rows.Count),
+    new MySqlParameter("@c", certas),
+    new MySqlParameter("@e", erradas)
+};
+
+            internalAPI.Executar(sqlTeste, p);
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -302,9 +356,26 @@ namespace PAF_ensaio
                 progressBar2.Width = (erradas * larguraMax) / total;
             }
 
-            // Define as cores para ficar igual ao exemplo do exercício
-            progressBar1.BackColor = Color.Green;
+            progressBar1.BackColor = Color.Green
             progressBar2.BackColor = Color.Red;
+        }
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 1)
+            {
+                CarregarHistorico();
+
+                // Se houver dados no histórico, vamos atualizar o gráfico com o último teste feito
+                if (dataGridView1.Rows.Count > 0)
+                {
+                    // Vai buscar os valores das colunas "Certas" e "Erradas" da primeira linha (o teste mais recente)
+                    int c = Convert.ToInt32(dataGridView1.Rows[0].Cells["Certas"].Value);
+                    int er = Convert.ToInt32(dataGridView1.Rows[0].Cells["Erradas"].Value);
+
+                    AtualizarGrafico(c, er);
+                }
+            }
         }
     }
 }
