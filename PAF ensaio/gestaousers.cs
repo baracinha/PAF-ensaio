@@ -356,7 +356,7 @@ namespace PAF_ensaio
                 progressBar2.Width = (erradas * larguraMax) / total;
             }
 
-            progressBar1.BackColor = Color.Green
+            progressBar1.BackColor = Color.Green;
             progressBar2.BackColor = Color.Red;
         }
 
