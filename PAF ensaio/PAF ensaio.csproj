@@ -153,5 +153,10 @@
   <ItemGroup>
     <None Include="Resources\eye-password-hide-svgrepo-com.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\84_-_Como_Solucionar_Dificuldades_em_Matematica_na_Escola_.png" />
+    <Content Include="Resources\IMMAGINE-1.jpg" />
+    <Content Include="Resources\post_thumbnail-2f0ab3332b81922f1c248428477ec54a.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

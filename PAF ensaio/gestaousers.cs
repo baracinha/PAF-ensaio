@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.X9;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Configuration;
@@ -267,8 +268,19 @@ namespace PAF_ensaio
             // 1. Verificar se selecionou algo (1: Mat, 2: Port, 3: Prog)
             int idDisc = comboBoxDisciplinas.SelectedIndex + 1;
 
-            // 2. Query para buscar as perguntas
-            string sql = "SELECT * FROM perguntas WHERE id_disciplina = @id AND ativo = 1";
+            if (idDisc == 1)
+            {
+                pictureBox2.Image = Properties.Resources._84___Como_Solucionar_Dificuldades_em_Matematica_na_Escola_;
+            }else if(idDisc == 2)
+            {
+                pictureBox2.Image = Properties.Resources.post_thumbnail_2f0ab3332b81922f1c248428477ec54a;
+            }else if (idDisc == 3)
+            {
+                pictureBox2.Image = Properties.Resources.IMMAGINE_1;
+            }
+
+                // 2. Query para buscar as perguntas
+                string sql = "SELECT * FROM perguntas WHERE id_disciplina = @id AND ativo = 1";
             MySqlParameter[] p = { new MySqlParameter("@id", idDisc) };
 
             dtPerguntas = internalAPI.Consulta(sql, p);

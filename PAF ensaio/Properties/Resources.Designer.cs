@@ -63,6 +63,16 @@ namespace PAF_ensaio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _84___Como_Solucionar_Dificuldades_em_Matematica_na_Escola_ {
+            get {
+                object obj = ResourceManager.GetObject("84_-_Como_Solucionar_Dificuldades_em_Matematica_na_Escola_", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap estudar {
             get {
                 object obj = ResourceManager.GetObject("estudar", resourceCulture);
@@ -83,6 +93,16 @@ namespace PAF_ensaio.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IMMAGINE_1 {
+            get {
+                object obj = ResourceManager.GetObject("IMMAGINE-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_atec {
             get {
                 object obj = ResourceManager.GetObject("logo atec", resourceCulture);
@@ -96,6 +116,16 @@ namespace PAF_ensaio.Properties {
         internal static System.Drawing.Bitmap logo_atec_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("logo_atec-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap post_thumbnail_2f0ab3332b81922f1c248428477ec54a {
+            get {
+                object obj = ResourceManager.GetObject("post_thumbnail-2f0ab3332b81922f1c248428477ec54a", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

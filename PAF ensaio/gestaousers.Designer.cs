@@ -61,7 +61,6 @@
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBoxDisciplinas = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,17 +69,18 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lbl_nivel = new System.Windows.Forms.Label();
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.ViewUsers)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // ViewUsers
@@ -363,10 +363,9 @@
             this.radioButton4.AutoSize = true;
             this.radioButton4.Location = new System.Drawing.Point(179, 235);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(85, 17);
+            this.radioButton4.Size = new System.Drawing.Size(14, 13);
             this.radioButton4.TabIndex = 6;
             this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "radioButton4";
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
@@ -374,10 +373,9 @@
             this.radioButton3.AutoSize = true;
             this.radioButton3.Location = new System.Drawing.Point(179, 188);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(85, 17);
+            this.radioButton3.Size = new System.Drawing.Size(14, 13);
             this.radioButton3.TabIndex = 5;
             this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "radioButton3";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton2
@@ -385,10 +383,9 @@
             this.radioButton2.AutoSize = true;
             this.radioButton2.Location = new System.Drawing.Point(179, 143);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(85, 17);
+            this.radioButton2.Size = new System.Drawing.Size(14, 13);
             this.radioButton2.TabIndex = 4;
             this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "radioButton2";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton1
@@ -396,19 +393,10 @@
             this.radioButton1.AutoSize = true;
             this.radioButton1.Location = new System.Drawing.Point(179, 100);
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
+            this.radioButton1.Size = new System.Drawing.Size(14, 13);
             this.radioButton1.TabIndex = 3;
             this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
             this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Location = new System.Drawing.Point(28, 72);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(109, 194);
-            this.pictureBox2.TabIndex = 2;
-            this.pictureBox2.TabStop = false;
             // 
             // button5
             // 
@@ -486,6 +474,15 @@
             this.label10.TabIndex = 10;
             this.label10.Text = "Apoio ao estudo";
             // 
+            // lbl_nivel
+            // 
+            this.lbl_nivel.AutoSize = true;
+            this.lbl_nivel.Location = new System.Drawing.Point(336, 56);
+            this.lbl_nivel.Name = "lbl_nivel";
+            this.lbl_nivel.Size = new System.Drawing.Size(29, 13);
+            this.lbl_nivel.TabIndex = 12;
+            this.lbl_nivel.Text = "nivel";
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::PAF_ensaio.Properties.Resources.estudar;
@@ -497,14 +494,14 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // lbl_nivel
+            // pictureBox2
             // 
-            this.lbl_nivel.AutoSize = true;
-            this.lbl_nivel.Location = new System.Drawing.Point(336, 56);
-            this.lbl_nivel.Name = "lbl_nivel";
-            this.lbl_nivel.Size = new System.Drawing.Size(29, 13);
-            this.lbl_nivel.TabIndex = 12;
-            this.lbl_nivel.Text = "nivel";
+            this.pictureBox2.Location = new System.Drawing.Point(28, 72);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(109, 194);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
             // 
             // gestaousers
             // 
@@ -532,8 +529,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
